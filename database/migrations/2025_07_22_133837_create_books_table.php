@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('author');
             $table->string('isbn', 13);
-            $table->boolean('available_copies')->default(false);
+            $table->integer('available_copies')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
