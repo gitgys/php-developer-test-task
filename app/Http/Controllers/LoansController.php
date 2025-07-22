@@ -18,6 +18,11 @@ class LoansController extends Controller
     }
 
     /**
+     * Create a new loan.
+     *
+     * @param Request $request
+     *
+     * @return JsonResponse
      * @throws OutOfStockException
      */
     public function store(Request $request): JsonResponse
@@ -36,6 +41,11 @@ class LoansController extends Controller
     }
 
     /**
+     * Returns a loan.
+     *
+     * @param Loan $loan
+     *
+     * @return JsonResponse
      * @throws LoanAlreadyReturnedException
      */
     public function return(Loan $loan): JsonResponse

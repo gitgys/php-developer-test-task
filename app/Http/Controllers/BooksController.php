@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Book;
+use App\Services\BookService;
 use Illuminate\Http\JsonResponse;
 
 class BooksController extends Controller
 {
-    public function index()
+    protected BookService $bookService;
+
+    public function __construct(BookService $bookService) {
+        $this->bookService = $bookService;
+    }
+
+    public function index(): JsonResponse
     {
-        $books = Book::all();
+        $books = $this->bookService->showBooks();
 
         return response()->json($books);
     }
