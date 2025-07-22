@@ -7,3 +7,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/books', [BooksController::class, 'index']);
 
 Route::post('/loans', [LoansController::class, 'store']);
+Route::post('/loans/{loan}/return', [LoansController::class, 'return']);

@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use Illuminate\Http\JsonResponse;
 
 class BooksController extends Controller
 {
     public function index()
     {
-        // will get the books
+        $books = Book::all();
+
+        return response()->json($books);
     }
 }
